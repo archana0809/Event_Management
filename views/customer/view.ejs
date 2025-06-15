@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= locals.title %></title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<div class="container mt-4">
+  <h2>View Customer Details</h2>
+  <hr>
+
+  <p><strong>First Name:</strong> <%= customer.firstName %></p>
+  <p><strong>Event Date:</strong> <%= customer.Date.toDateString() %></p>
+  <p><strong>Email:</strong> <%= customer.email %></p>
+  <p><strong>Phone:</strong> <%= customer.tel %></p>
+  <p><strong>Event Details:</strong> <%= customer.details %></p>
+
+  <% if (customer.image) { %>
+    <p><strong>Image:</strong></p>
+    <img src="/uploads/<%= customer.image %>" alt="Event Image" style="max-width: 300px;">
+  <% } %>
+
+  <br><br>
+  <a href="/" class="btn btn-secondary">← Back</a>
+</div>
+
+</body>
+</html>
